@@ -27,7 +27,7 @@ public class FirebaseDataController {
     private DatabaseReference mDatabase;
 
     public void saveDataToFirebaseDatabase(Location location, int mSignalStrength){
-        mDatabase = FirebaseDatabase.getInstance().getReference().push();
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("database").push();
 
         FieldData fieldData = new FieldData();
         fieldData.setLatitude(location.getLatitude());
@@ -77,3 +77,5 @@ public class FirebaseDataController {
         }
     }
 }
+
+
